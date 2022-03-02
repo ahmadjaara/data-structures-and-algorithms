@@ -1,3 +1,10 @@
+table of content  
+
+| table of content |  |
+| ----------- | ----------- |
+| challenge no| URL challenge |
+| 1 | https://github.com/ahmadjaara/data-structures-and-algorithms/edit/main/README.md | 
+| 2  |     | 
 # data-structures-and-algorithms
 The challenge is to write a function that take an array and return new array that has the reverse element of the original array using whiteboard
 for example :
