@@ -8,7 +8,7 @@ output will give me
 insertelementarray = [1,2,3 ,**7**,4,5]  
 
 ## Whiteboard Process
-![Whiteboard challenge](/picture/insertShiftArray1.jpg "Whiteboard challenge" )
+![Whiteboard challenge](/picture/insertShiftArray12.jpg "Whiteboard challenge" )
 
 
 ## Approach & Efficiency
