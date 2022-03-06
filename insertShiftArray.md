@@ -8,7 +8,9 @@ output will give me
 insertelementarray = [1,2,3 ,**7**,4,5]  
 
 ## Whiteboard Process
-![Whiteboard challenge](/picture/insertShiftArray.jpg "Whiteboard challenge" )
+
+![Whiteboard challenge](/picture/insertShiftArray12.jpg "Whiteboard challenge" )
+
 
 
 ## Approach & Efficiency
@@ -22,7 +24,9 @@ since i use for loop the block of code inside it will occure as the value of the
 ### (big o ==> space(n+1)) ==> O(n) ==>space  
 here the new array will have the same space of the original array plus one element so that ==> (n+1)
 
-## stretch goal :
+
+# stretch goal :
+
 what if we want to erase the middle element from an array .
 
 ### problem domain: 
@@ -48,15 +52,19 @@ what if we want to erase the middle element from an array .
             if i == l/2:
                 continue
             else:
-                ea.append(a[i])
-                
+
+                ea+=[a[i]]
+
+     
         else:
             
             for i in range(l):
             if i == (l-1)/2:
                 continue
             else:
-                ea.append(a[i])
+
+                ea+=[a[i]]
+
                 
         return ea
 Big o:
