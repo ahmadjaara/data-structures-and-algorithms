@@ -8,7 +8,9 @@ output will give me
 insertelementarray = [1,2,3 ,**7**,4,5]  
 
 ## Whiteboard Process
+
 ![Whiteboard challenge](/picture/insertShiftArray12.jpg "Whiteboard challenge" )
+
 
 
 ## Approach & Efficiency
@@ -24,6 +26,7 @@ here the new array will have the same space of the original array plus one eleme
 
 
 # stretch goal :
+
 what if we want to erase the middle element from an array .
 
 ### problem domain: 
@@ -49,15 +52,19 @@ what if we want to erase the middle element from an array .
             if i == l/2:
                 continue
             else:
+
                 ea+=[a[i]]
-                
+
+     
         else:
             
             for i in range(l):
             if i == (l-1)/2:
                 continue
             else:
+
                 ea+=[a[i]]
+
                 
         return ea
 Big o:
