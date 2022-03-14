@@ -24,15 +24,60 @@ Linked List
     Upon instantiation, an empty Linked List should be created.
 
 "
+# Feature Tasks
+
+Write the following methods for the Linked List class:
+
+- insert
+
+    Arguments: value
+    Returns: nothing
+    Adds a new node with that value to the head of the list with an O(1) Time performance.
+
+- includes
+
+    Arguments: value
+    Returns: Boolean
+    Indicates whether that value exists as a Node’s value somewhere within the list.
+
+- to string
+
+    Arguments: none
+    Returns: a string representing all the values in the Linked List, formatted as:
+    "{ a } -> { b } -> { c } -> NULL"
+
+
+- append method 
+
+    arguments: new value
+    adds a new node with the given value to the end of the list
+    
+- insert before method 
+
+    arguments: value, new value
+    adds a new node with the given new value immediately before the first  node that has the value specified
+    
+- insert after method 
+
+    arguments: value, new value
+    adds a new node with the given new value immediately after the first node that has the value specified
+
+
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-- for insert method i use a o(1) 
+- for **insert method** after the head i use a `o(1)` since here i just move one step and link the new node with head node and the space big O is `o(1)` since i add one node at the exist link list   
 
-- for diplay/search_ele/tostring methods i use a loop to do the functionality for these methods so it is o(n)
+- for **display/search_ele/tostring** methods i use a loop to do the functionality for these methods so it is `o(n)` since i firstly move inside the link list until i reach the none node so i move the number of node inside the link list 
+the space big O is `o (1)`
+
+- for the **append/insert before/insert after method** the big o is 
+`o(n)` since here also i use a loop to move inside the link list untile i fid the data value i search for and i add the noce at it 
+the space is `O(1)` since i just add a new node for the same link list  
 
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
+
 - insert_begining method :        
     
     Arguments: data
@@ -52,4 +97,24 @@ Linked List
         
     Returns: a string representing all the values in the Linked List, formatted as:
     "{ a } -> { b } -> { c } -> NULL"
+- append_linklist(self,value_add)
+    
+    add a node at the end of the link list 
+    input a data for the node that will add
+    output a node placed at the end of link list 
+
+- insert_after(self,value_add_after,place):
+        
+    add a node at after a specific node value in the link list 
+    input a data for the node that will add and 
+    the place (which is the value of the node that i will add the new node after it)
+    output a node placed after a specific node in the link list 
+- insert_before(self,value_add_before,place):
+
+    add a node at before a specific node value in the link list 
+    input a data for the node that will add and 
+    the place (which is the value of the node that i will add the new node before it)
+    output a node placed before a specific node in the link list 
+    
+    
         

@@ -35,7 +35,9 @@ class Linklist:
 
         """
         nb=Node(data)
+
         nb.next=self.head
+
         self.head=nb
     
     def search_ele(self,x):
@@ -44,14 +46,18 @@ class Linklist:
             Returns: Boolean
             Indicates whether that value exists as a Node  value somewhere within the list.
         """
-        temp =self.head
-        is_found=False
-        while temp:
-            if temp.data==x:
-                is_found=True
-            temp=temp.next
-        
-        return is_found
+        if self.head is None:
+           return "linked list is empty"
+
+        else:
+            temp =self.head
+            is_found=False
+            while temp:
+                if temp.data==x:
+                    is_found=True
+                temp=temp.next
+            
+            return is_found
 
     def display(self):
         """
@@ -76,7 +82,7 @@ class Linklist:
         """
         string_linklist=" "
         if self.head is None:
-            print("linked list is empty")  
+            return "linked list is empty"
         else:
             temp = self.head
             while temp:
@@ -85,11 +91,94 @@ class Linklist:
             string_linklist=string_linklist+"NULL"
             print(string_linklist)
 
+    def append_linklist(self,value_add):
+        """
+        add a node at the end of the link list 
+        input a data for the node that will add
+        output a node placed at the end of link list 
+        """
+        if self.head is None:
+            nd=Node(value_add)
+            
+            nd.next =self.head
+
+            self.head=nd
+
+        else:
+            nd=Node(value_add)
+            
+            temp = self.head
+
+            while temp.next:
+                temp = temp.next
+            temp.next=nd
+
+
+    def insert_after(self,value_add_after,place):
+        """
+        add a node at after a specific node value in the link list 
+        input a data for the node that will add and 
+        the place (which is the value of the node that i will add the new node after it)
+        output a node placed after a specific node in the link list 
+        """
+        nd=Node(value_add_after)
+
+        temp = self.head
+
+        while temp.data!=place and temp.next!=None:
+            temp=temp.next
+
+        if temp.data==place:
+            nd.next=temp.next
+            temp.next=nd
+        else:
+            print("no node value match the input")
+        
+    
+    def insert_before(self,value_add_before,place):
+        """
+        add a node at before a specific node value in the link list 
+        input a data for the node that will add and 
+        the place (which is the value of the node that i will add the new node before it)
+        output a node placed before a specific node in the link list 
+        """
+        if self.head.data == place:
+            
+            nd=Node(value_add_before)
+            
+            nd.next =self.head
+
+            self.head=nd
+        else:
+            m=Node(value_add_before)
+
+            temp = self.head
+            ptr=temp
+            while temp.data!=place and temp.next!=None:
+                ptr=temp
+                temp=temp.next
+            if temp.data==place:
+                m.next=ptr.next
+                ptr.next=m
+            else:
+                print("no node value match the input")
+
+
+        
+        
+        
+
+
+            
+
+
+
+
 if __name__=="__main__":
     #create the node data and pointer 
 
     linklist= Linklist()
-    print(Linklist())
+    # print(Linklist())
     # #create the linklist 
 
     # #create the node n
@@ -112,17 +201,21 @@ if __name__=="__main__":
     # linklist.to_string()
 
     ll=Linklist()
-    ll.insert_begining("1")
-    ll.insert_begining("2")
-    ll.insert_begining("3")
-    ll.insert_begining("4")
+    # ll.insert_begining("1")
+    # ll.insert_begining("2")
+    # ll.insert_begining("3")
+    # ll.insert_begining("4")
+    # ll.append_linklist("end")
+    # ll.insert_after("k","1")
+    # ll.insert_before("k","1")
+    # ll.insert_before("k","k")
+    # ll.insert_before("o","k")
+    # ll.insert_after("hello","555")
+    # ll.append_linklist("100")
+    # ll.append_linklist("10000")
+    ll.append_linklist("1")
+    ll.append_linklist("2")
+    ll.append_linklist("3")
+    ll.append_linklist("4")
+    ll.insert_after("last","4")
     print(ll.display())
-    
-    '''
-    else:
-                current = self.head
-                while current.next is not None:
-                    current = current.next
-                current.next = node
-
-    '''

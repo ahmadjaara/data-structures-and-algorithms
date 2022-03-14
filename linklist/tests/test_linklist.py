@@ -109,3 +109,110 @@ def test_return_all_collecation_in_linklist():
     actual =ll.display()
     
     assert expected == actual
+
+def test_append():
+    """
+    test to check if the linklist class
+    Can properly insert node at the end of the linked list
+    """
+    ll=Linklist()
+    ll.append_linklist("l")
+    expected="l"
+    actual=ll.head.data
+    assert expected == actual
+
+def test_append_multiple_node():
+    """
+    test to check if the linklist class
+    Can properly insert multiple node at the begining of the linked list
+
+    """
+    ll=Linklist()
+    ll.append_linklist("1")
+    ll.append_linklist("2")
+    ll.append_linklist("3")
+    ll.append_linklist("4")
+    
+    expected ="1 -->2 -->3 -->4 -->None"
+    
+    actual =ll.display()
+    
+    assert expected == actual
+
+def test_insert_node_before_mid():
+    """
+    test to check if the linklist class
+    Can successfully insert a node before a node located i the middle of a linked list
+
+    """
+    ll=Linklist()
+    ll.append_linklist("1")
+    ll.append_linklist("2")
+    ll.append_linklist("3")
+    ll.append_linklist("4")
+    ll.insert_before("mid","3")
+    
+    expected ="1 -->2 -->mid -->3 -->4 -->None"
+    
+    actual =ll.display()
+    
+    assert expected == actual
+
+def test_insert_node_before_first_node():
+    """
+    test to check if the linklist class
+    an successfully insert a node before the first node of a linked list
+
+    """
+    ll=Linklist()
+    ll.append_linklist("1")
+    ll.append_linklist("2")
+    ll.append_linklist("3")
+    ll.append_linklist("4")
+    ll.insert_before("first","1")
+    
+    expected ="first -->1 -->2 -->3 -->4 -->None"
+    
+    actual =ll.display()
+    
+    assert expected == actual
+
+def test_insert_node_after_mid():
+    """
+    test to check if the linklist class
+    Can successfully insert after a node in the middle of the linked list
+
+    """
+    ll=Linklist()
+    ll.append_linklist("1")
+    ll.append_linklist("2")
+    ll.append_linklist("3")
+    ll.append_linklist("4")
+    ll.insert_after("mid","3")
+    
+    expected ="1 -->2 -->3 -->mid -->4 -->None"
+    
+    actual =ll.display()
+    
+    assert expected == actual
+
+def test_insert_node_after_last():
+    """
+    test to check if the linklist class
+    Can successfully insert after a node in the middle of the linked list
+
+    """
+    ll=Linklist()
+    ll.append_linklist("1")
+    ll.append_linklist("2")
+    ll.append_linklist("3")
+    ll.append_linklist("4")
+    ll.insert_after("last","4")
+    
+    expected ="1 -->2 -->3 -->4 -->last -->None"
+    
+    actual =ll.display()
+    
+    assert expected == actual
+
+    
