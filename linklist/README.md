@@ -115,6 +115,11 @@ the space is `O(1)` since i just add a new node for the same link list
     input a data for the node that will add and 
     the place (which is the value of the node that i will add the new node before it)
     output a node placed before a specific node in the link list 
-    
-    
+## white board  
+
+![append pic](/pic/append.jpg )
+
+![insertafter pic](/pic/insertafter.jpg)
+
+![insertbefore pic](/pic/insertbefore.jpg )   
         

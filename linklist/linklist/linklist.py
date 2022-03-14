@@ -144,11 +144,11 @@ class Linklist:
         """
         if self.head.data == place:
             
-            nd=Node(value_add_before)
+            m=Node(value_add_before)
             
-            nd.next =self.head
+            m.next =self.head
 
-            self.head=nd
+            self.head=m
         else:
             m=Node(value_add_before)
 
