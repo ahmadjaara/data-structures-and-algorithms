@@ -7,6 +7,7 @@ table of content
 | 1 | https://github.com/ahmadjaara/data-structures-and-algorithms/edit/main/README.md | 
 | 2  | https://github.com/ahmadjaara/data-structures-and-algorithms/pull/2  | 
 | 3  | https://github.com/ahmadjaara/data-structures-and-algorithms/pull/4  | 
+|4 linklist| https://github.com/ahmadjaara/data-structures-and-algorithms/pulls|
 
 # data-structures-and-algorithms
 The challenge is to write a function that take an array and return new array that has the reverse element of the original array using whiteboard
