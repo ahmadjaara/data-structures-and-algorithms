@@ -133,10 +133,10 @@ for space `O(1)` just add a variables .
 
 ## white board  
 
-![append pic](/pic/append.jpg "append pic")
+![append pic](pic/append.jpg "append pic")
 
-![insertafter pic](/pic/insertafter.jpg "insert afrter pic")
+![insertafter pic](pic/insertafter.jpg "insert afrter pic")
 
-![insertbefore pic](/pic/insertbefore.jpg "insert before pic")
+![insertbefore pic](pic/insertbefore.jpg "insert before pic")
 
-![searchk element pic](/pic/searchkelement.jpg "searchk element")
+![searchk element pic](pic/searchkelement.jpg "searchk element")
