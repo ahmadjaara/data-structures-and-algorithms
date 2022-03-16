@@ -162,6 +162,39 @@ class Linklist:
                 ptr.next=m
             else:
                 print("no node value match the input")
+    
+    def kthFromEnd(self,k):
+        """
+        method for searching for the K th  element in the
+        linklist which k start from the tail of the linklist 
+        input: k to determine the index for the node
+        output: the data or value of the K node  
+        """
+        len =0
+        temp=self.head
+        while temp:
+            len+=1
+            temp=temp.next
+        print(len)
+        index=0
+        ptr=self.head
+        newind=(len-1)-k
+        print(newind)
+        while ptr:
+            # print(ptr.data)
+            if (index==newind):
+               return ptr.data
+            index+=1
+            ptr=ptr.next
+        return("Exception")
+        
+      
+            
+
+            
+            
+        
+        
 
 
         
@@ -218,4 +251,5 @@ if __name__=="__main__":
     ll.append_linklist("3")
     ll.append_linklist("4")
     ll.insert_after("last","4")
+    print(ll.kthFromEnd(4))
     print(ll.display())

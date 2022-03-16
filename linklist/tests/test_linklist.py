@@ -215,4 +215,115 @@ def test_insert_node_after_last():
     
     assert expected == actual
 
+def test_search_kth_node():
+    """
+    test to check if the kthFromEnd method
+    Can successfully search for a node Where k is greater than the length of the linked list
+
+    """
+    ll=Linklist()
+    ll.append_linklist("1")
+    ll.append_linklist("2")
+    ll.append_linklist("3")
+    ll.append_linklist("4")
+    ll.insert_after("last","4")
     
+    linklist_diplay="1 -->2 -->3 -->4 -->last -->None"
+
+    expected="Exception"
+    actual =ll.kthFromEnd(7)
+
+    assert expected == actual
+
+
+def test_search_kth_node2():
+    """
+    test to check if the kthFromEnd method
+    Can successfully search for a node Where k and the length of the list are the same
+
+    """
+    ll=Linklist()
+    ll.append_linklist("1")
+    ll.append_linklist("2")
+    ll.append_linklist("3")
+    ll.append_linklist("4")
+    ll.insert_after("last","4")
+
+    linklist_diplay="1 -->2 -->3 -->4 -->last -->None"
+
+    expected="Exception"
+    actual =ll.kthFromEnd(5)
+
+    assert expected == actual
+
+def test_search_kth_node3():
+    """
+    test to check if the kthFromEnd method
+    Can successfully search for a node Where k is not a positive integer
+
+    """
+    ll=Linklist()
+    ll.append_linklist("1")
+    ll.append_linklist("2")
+    ll.append_linklist("3")
+    ll.append_linklist("4")
+    ll.insert_after("last","4")
+
+    linklist_diplay="1 -->2 -->3 -->4 -->last -->None"
+
+    expected="Exception"
+    actual =ll.kthFromEnd(-5)
+
+    assert expected == actual
+
+def test_search_kth_node4():
+    """
+    test to check if the kthFromEnd method
+    Can successfully search for a node Where the linked list is of a size 1
+
+    """
+    ll=Linklist()
+    ll.append_linklist("1")
+
+    linklist_diplay="1 -->None"
+
+    expected="1"
+    actual =ll.kthFromEnd(0)
+
+    assert expected == actual
+
+def test_search_kth_node5():
+    """
+    test to check if the kthFromEnd method
+    Can successfully search for a node Where the linked list is of a size 1
+
+    """
+    ll=Linklist()
+    ll.append_linklist("1")
+
+    linklist_diplay="1 -->None"
+
+    expected="Exception"
+    actual =ll.kthFromEnd(1)
+
+    assert expected == actual
+
+def test_search_kth_node6():
+    """
+    test to check if the kthFromEnd method
+    Can successfully search for a node Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+
+    """
+    ll=Linklist()
+    ll.append_linklist("1")
+    ll.append_linklist("2")
+    ll.append_linklist("3")
+    ll.append_linklist("4")
+    ll.insert_after("last","4")
+
+    linklist_diplay="1 -->2 -->3 -->4 -->last -->None"
+
+    expected="3"
+    actual =ll.kthFromEnd(2)
+
+    assert expected == actual
