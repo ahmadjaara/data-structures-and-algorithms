@@ -117,9 +117,8 @@ the space is `O(1)` since i just add a new node for the same link list
     output a node placed before a specific node in the link list 
 ## white board  
 
-![append pic](/pic/append.jpg )
+![append pic](/pic/append.jpg "append pic")
 
-![insertafter pic](/pic/insertafter.jpg)
+![insertafter pic](/pic/insertafter.jpg "insert afrter pic")
 
-![insertbefore pic](/pic/insertbefore.jpg )   
-        
+![insertbefore pic](/pic/insertbefore.jpg "insert before pic")
