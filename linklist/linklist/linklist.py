@@ -188,23 +188,39 @@ class Linklist:
             ptr=ptr.next
         return("Exception")
         
-      
+    def zipLists(self,l1,l2):
+        """
+        
+        """
+        before_ptr=l1.head
+
+        current_ptr=l2.head
+
+        #to check if the first list is empty 
+        if before_ptr==None:
+            after_ptr=None
+            current_ptr= None
+            l1.head=l2.head
+        elif current_ptr== None:
+            after_ptr=None
+            current_ptr= None
+            l2.head=l1.head 
+        else:
+            after_ptr=before_ptr.next
+
+
+        while (current_ptr!=None):
             
+            before_ptr.next=current_ptr
 
-            
-            
+            before_ptr=current_ptr
+
+            current_ptr=after_ptr
+
+            after_ptr=before_ptr.next
         
-        
-
-
-        
-        
-        
-
-
-            
-
-
+        #empty the second list
+        l2.head=None  
 
 
 if __name__=="__main__":
@@ -234,22 +250,27 @@ if __name__=="__main__":
     # linklist.to_string()
 
     ll=Linklist()
-    # ll.insert_begining("1")
-    # ll.insert_begining("2")
-    # ll.insert_begining("3")
-    # ll.insert_begining("4")
-    # ll.append_linklist("end")
-    # ll.insert_after("k","1")
-    # ll.insert_before("k","1")
-    # ll.insert_before("k","k")
-    # ll.insert_before("o","k")
-    # ll.insert_after("hello","555")
-    # ll.append_linklist("100")
-    # ll.append_linklist("10000")
+    ll2=Linklist()
+
     ll.append_linklist("1")
-    ll.append_linklist("2")
-    ll.append_linklist("3")
-    ll.append_linklist("4")
-    ll.insert_after("last","4")
-    print(ll.kthFromEnd(4))
+    # ll.append_linklist("2")
+    # ll.append_linklist("3")
+    # ll.append_linklist("4")
+    # ll.insert_after("last","4")
+    # ll.append_linklist("41")
+    # ll.append_linklist("42")
+    # ll.append_linklist("43")
+
+    ll2.append_linklist("5")
+    ll2.append_linklist("6")
+    ll2.append_linklist("7")
+    # # ll2.append_linklist("8")
+    # # ll2.append_linklist("9")
+    # # ll2.append_linklist("10")
+  
     print(ll.display())
+    print(ll2.display())
+    ll.zipLists(ll,ll2)
+    print(ll.display())
+    # print(ll2.display())
+    # print(ll2.display())
