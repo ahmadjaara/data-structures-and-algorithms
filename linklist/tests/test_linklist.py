@@ -327,3 +327,128 @@ def test_search_kth_node6():
     actual =ll.kthFromEnd(2)
 
     assert expected == actual
+
+#ziplists method
+def test_ziplists_equal_length():
+    """
+    test to check if the ziplists method
+    Can successfully zip two link lists with equal length for one zipped list 
+
+    """
+    ll=Linklist()
+    ll2=Linklist()
+    ll.append_linklist("1")
+    ll.append_linklist("2")
+    ll.append_linklist("3")
+    ll.append_linklist("4")
+    ll.insert_after("last","4")
+
+    ll2.append_linklist("5")
+    ll2.append_linklist("6")
+    ll2.append_linklist("7")
+    ll2.append_linklist("8")
+    ll2.append_linklist("9")
+    
+
+    ziped_linklist_diplay="1 -->5 -->2 -->6 -->3 -->7 -->4 -->8 -->last -->9 -->None"
+
+    expected="1 -->5 -->2 -->6 -->3 -->7 -->4 -->8 -->last -->9 -->None"
+    ll.zipLists(ll,ll2)
+    actual=ll.display()
+
+    assert expected == actual
+
+
+def test_ziplists_not_equal_length1():
+    """
+    test to check if the ziplists method
+    Can successfully zip two link lists with not equal in length for one zipped list 
+
+    """
+    ll=Linklist()
+    ll2=Linklist()
+    ll.append_linklist("1")
+    ll.append_linklist("2")
+    ll.append_linklist("3")
+    ll.append_linklist("4")
+    ll.insert_after("last","4")
+
+    ll2.append_linklist("5")
+    ll2.append_linklist("6")
+    ll2.append_linklist("7")
+    
+
+    ziped_linklist_diplay="1 -->5 -->2 -->6 -->3 -->7 -->4 -->last -->None"
+
+    expected="1 -->5 -->2 -->6 -->3 -->7 -->4 -->last -->None"
+    ll.zipLists(ll,ll2)
+    actual=ll.display()
+
+    assert expected == actual
+
+def test_ziplists_not_equal_length2():
+    """
+    test to check if the ziplists method
+    Can successfully zip two link lists with not equal in length for one zipped list 
+
+    """
+    ll=Linklist()
+    ll2=Linklist()
+    ll.append_linklist("1")
+    
+    ll2.append_linklist("5")
+    ll2.append_linklist("6")
+    ll2.append_linklist("7")
+    
+
+    ziped_linklist_diplay="1 -->5 -->6 -->7 -->None"
+
+    expected="1 -->5 -->6 -->7 -->None"
+    ll.zipLists(ll,ll2)
+    actual=ll.display()
+
+    assert expected == actual
+
+def test_ziplists_empty():
+    """
+    test to check if the ziplists method
+    Can successfully zip two link lists the second list is empty for one zipped list 
+
+    """
+    ll=Linklist()
+    ll2=Linklist()
+    ll.append_linklist("1")
+    ll.append_linklist("2")
+    ll.append_linklist("3")
+    ll.append_linklist("4")
+    ll.insert_after("last","4")
+
+    ziped_linklist_diplay="1 -->2 -->3 -->4 -->last -->None"
+
+    expected="1 -->2 -->3 -->4 -->last -->None"
+    ll.zipLists(ll,ll2)
+    actual=ll.display()
+
+    assert expected == actual
+
+def test_ziplists_empty2():
+    """
+    test to check if the ziplists method
+    Can successfully zip two link lists the first list is empty for one zipped list 
+
+    """
+    ll=Linklist()
+    ll2=Linklist()
+    ll2.append_linklist("1")
+    ll2.append_linklist("2")
+    ll2.append_linklist("3")
+    ll2.append_linklist("4")
+    ll2.insert_after("last","4")
+
+    ziped_linklist_diplay="1 -->2 -->3 -->4 -->last -->None"
+
+    expected="1 -->2 -->3 -->4 -->last -->None"
+    ll.zipLists(ll,ll2)
+    actual=ll.display()
+
+    assert expected == actual

@@ -9,10 +9,10 @@ Each element in a linked list is called a node. A single node contains data and 
 ## Challenge
 <!-- Description of the challenge -->
 create a linklist data structure and
-add a method to display all the data inside the linklist and a method to insert node at the begining of the linklist and a method to search inside for an element inside the linklist
-and other method like insert node after and before
-node insde the linklist and a method to search for
+add a method to display all the data inside the linklist and a method to insert node at the begining of the linklist and a method to search for an element inside the linklist
+and another method like insert node after and before node insde the linklist and a method to search for
 the K(index) for the node data
+and a method to Zip two linked lists together into one so that the nodes alternate between the two lists
 
 "
 challenge feature :
@@ -71,6 +71,11 @@ Write the following methods for the Linked List class:
     argument: a number, k, as a parameter.
     Return the node’s value that is k places from the tail of the linked list.
 
+- zip lists method
+    argument: 2 linked lists
+    Return New Linked List zipped the two list togather
+
+
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 - for **insert method** after the head i use a `o(1)` since here i just move one step and link the new node with head node and the space big O is `o(1)` since i add one node at the exist link list
@@ -84,6 +89,9 @@ the space is `O(1)` since i just add a new node for the same link list
 
 - for the **kthFromEnd** i use two loop one to calculate the length of the linklist and another one for search for the k element so the big o notation for time is `O(n)` (LOOP1+LOOP2=n+n=2n~~>n)
 for space `O(1)` just add a variables .
+
+- for the **zip lists method** i use one loop to change between pointer variable so the big o notation for time is `O(n)`
+and the big o notation for space is `O(1)` since i just modifie the first link list and i dont create any new link list 
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
@@ -130,6 +138,12 @@ for space `O(1)` just add a variables .
     method for searching for the K th  element in the linklist which k start from the tail of the linklist,
     input: k to determine the index for the node
     output: the data or value of the K node.
+- zipLists(self,l1,l2)
+    method to Zip two linked lists together into one so that the nodes alternate between the two lists
+
+    input :two link list
+
+    output :a zipped link list contain the two lists in a zipped sort
 
 ## white board  
 
@@ -140,3 +154,5 @@ for space `O(1)` just add a variables .
 ![insertbefore pic](pic/insertbefore.jpg "insert before pic")
 
 ![searchk element pic](pic/searchkelement.jpg "searchk element")
+
+![zipLists pic](pic/zipLists.jpg "ziplists")
