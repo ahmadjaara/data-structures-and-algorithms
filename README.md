@@ -7,7 +7,8 @@ table of content
 | 1 | <https://github.com/ahmadjaara/data-structures-and-algorithms/edit/main/README.md> |
 | 2  | <https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/insertShiftArray.md>  |
 | 3  | <https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/BinarySearch.md> |
-|4 linklist| <https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/linklist/README.md>|
+|linklist| <https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/linklist/README.md>|
+|stack&queue| <https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/stackandqueue/READMES%26Q.md>|
 
 # data-structures-and-algorithms
 

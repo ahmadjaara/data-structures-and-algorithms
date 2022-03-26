@@ -1,5 +1,8 @@
 
 
+from email import header
+
+
 class Node:
     """
     Node class create node which has two variable the value ==data
@@ -220,8 +223,34 @@ class Linklist:
             after_ptr=before_ptr.next
         
         #empty the second list
-        l2.head=None  
+        l2.head=None 
 
+    def reverse(self):
+        prev = None
+        current = self.head
+        while(current is not None):
+            next = current.next
+            current.next = prev
+            prev = current
+            current = next
+        self.head = prev
+
+    def panderrom(self):
+        nums=[]
+        temp=self.head
+        while temp:
+            nums.append(temp.data)
+            temp=temp.next
+        i=0
+        j=len(nums)-1
+
+        while i<=j:
+            if nums[i]!=nums[j]:
+                return False
+            i+=1
+            j-=1
+        return True
+        
 
 if __name__=="__main__":
     #create the node data and pointer 
@@ -261,16 +290,17 @@ if __name__=="__main__":
     # ll.append_linklist("42")
     # ll.append_linklist("43")
 
-    ll2.append_linklist("5")
-    ll2.append_linklist("6")
-    ll2.append_linklist("7")
+    ll.append_linklist("2")
+    ll.append_linklist("2")
+    ll.append_linklist("1")
     # # ll2.append_linklist("8")
     # # ll2.append_linklist("9")
     # # ll2.append_linklist("10")
   
-    print(ll.display())
-    print(ll2.display())
-    ll.zipLists(ll,ll2)
-    print(ll.display())
+    # print(ll.display())
     # print(ll2.display())
-    # print(ll2.display())
+    # ll.zipLists(ll,ll2)
+    print(ll.display())
+   
+    print(ll.panderrom())
+    
