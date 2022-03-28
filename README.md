@@ -9,6 +9,7 @@ table of content
 | 3  | <https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/BinarySearch.md> |
 |linklist| <https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/linklist/README.md>|
 |stack&queue| <https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/stackandqueue/READMES%26Q.md>|
+|ReadPsudoQueue|<https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/stackandqueue/ReadPsudoQueue.md>|
 
 # data-structures-and-algorithms
 
