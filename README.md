@@ -10,6 +10,7 @@ table of content
 |linklist| <https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/linklist/README.md>|
 |stack&queue| <https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/stackandqueue/READMES%26Q.md>|
 |ReadPsudoQueue|<https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/stackandqueue/ReadPsudoQueue.md>|
+|Animal shelter|<https://github.com/ahmadjaara/data-structures-and-algorithms/pull/16>|
 
 # data-structures-and-algorithms
 
