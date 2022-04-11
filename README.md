@@ -13,6 +13,7 @@ table of content
 |Animal shelter|<<https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/stackandqueue/ReadAnimalShelter.md>|
 |stackandbracket|<https://github.com/ahmadjaara/data-structures-and-algorithms/blob/stack-queue-brackets/stackandqueue/ReadStackBracketCheck.md>|
 |Trees |<https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/Tree/README.md>|
+|Tree max method|<https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/Tree/Readtree_max.md>|
 
 # data-structures-and-algorithms
 
