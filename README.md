@@ -12,6 +12,7 @@ table of content
 |ReadPsudoQueue|<https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/stackandqueue/ReadPsudoQueue.md>|
 |Animal shelter|<<https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/stackandqueue/ReadAnimalShelter.md>|
 |stackandbracket|<https://github.com/ahmadjaara/data-structures-and-algorithms/blob/stack-queue-brackets/stackandqueue/ReadStackBracketCheck.md>|
+|Trees |<https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/Tree/README.md>|
 
 # data-structures-and-algorithms
 
