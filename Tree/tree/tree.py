@@ -1,3 +1,47 @@
+# class Node:
+#     def __init__(self,value):
+#         self.value=value
+#         self.next=None
+# class Stack:
+
+#     def __init__(self):
+#         self.top=None
+
+#     def push(self, value):
+#         """
+#             push will add a new Node to the stack
+
+#             input: value
+#             output: None
+
+#         """
+#         node = Node(value)
+#         node.next = self.top
+#         self.top = node
+
+#     def pop(self):
+#         """
+#         input: none
+#         doing: pop the top node from the stack 
+#         output: popped node's value
+#         """
+#         if self.is_empty():
+#             raise Exception("Stack is empty !")
+        
+#         temp=self.top
+#         self.top=self.top.next
+#         temp.next=None
+        
+#         return temp.value
+        
+        
+#     def is_empty(self):
+#         if self.top == None:
+#             return True 
+#         return False
+
+from tree.new_stack import Stack,Node
+
 
 class TNode:
     def __init__(self,value):
@@ -16,10 +60,11 @@ class BinaryTree:
         doing: traverse a tree
         output: print values of the nodes of the tree Pre-order: root >> left >> right
         """
-        
+        list_pre=[]
         def _walk(node):
             
-            print(node.value)
+            #print(str(node.value) + "->", end='')
+            list_pre.append(str(node.value))
 
             if node.left:
                 _walk(node.left)
@@ -28,7 +73,7 @@ class BinaryTree:
         
         _walk(self.root)
         
-    
+        return list_pre
 
         # stack = Stack()
         # current = self.root
@@ -50,22 +95,26 @@ class BinaryTree:
         doing: traverse a tree
         output: print values of the nodes of the tree In-order: left >> root >> right
         """
+        list_in_or=[]
         def _walk(node):
             
-
+            
             if node.left:
                 _walk(node.left)
-            print(node.value)
+            #print(str(node.value) + "->", end='')
+            list_in_or.append(str(node.value))
             if node.right:
                 _walk(node.right)
 
         _walk(self.root)
+        return list_in_or
     def post_order(self):
         """
         Input: None
         doing: traverse a tree
         output: print values of the nodes of the tree **Post-order: left >> right >> root
         """
+        list_post_or=[]
         def _walk(node):
             
             if node.left:
@@ -73,10 +122,35 @@ class BinaryTree:
             
             if node.right:
                 _walk(node.right)
-            
-            print(node.value)
+            list_post_or.append(str(node.value))
+            #print(str(node.value) + "->", end='')
         _walk(self.root)
+        return list_post_or
         
+    def max_value(self):
+        """
+        Find the maximum value stored in the tree
+        Arguments: none
+        Returns: number
+        """
+        stack = Stack()
+        current = self.root
+        maxv=current.value
+
+        stack.push(current)
+
+        while not stack.is_empty():
+            current = stack.pop()
+            if maxv <= current.value:
+                maxv=current.value
+            # print(current.value)
+
+            if current.right:
+                stack.push(current.right)
+
+            if current.left:
+                stack.push(current.left)
+        return maxv
 
 class Binary_Search_Tree(BinaryTree):
     
@@ -125,7 +199,7 @@ class Binary_Search_Tree(BinaryTree):
                 ptr_node = ptr_node.left
             else:
                 ptr_node = ptr_node.right
-        
+    
 
 
 if __name__=="__main__":
@@ -143,7 +217,8 @@ if __name__=="__main__":
     
     # tree.add(6)
     # print(tree.contains(4))
-    print(tree.post_order())
+    # print(tree.post_order())
     # print("1\n2\n3\n4")
     # print(tree.root.left.value)
+    print(tree.max_value())
       
