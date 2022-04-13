@@ -1,5 +1,6 @@
 
-from tree.new_stack import Stack,Node
+from tree.queue import Queue
+from tree.new_stack import Stack
 
 
 class TNode:
@@ -110,6 +111,25 @@ class BinaryTree:
             if current.left:
                 stack.push(current.left)
         return maxv
+    def breadth_first(self,tree):
+        """
+        Traverse the input tree using a Breadth-first approach 
+        Arguments: tree
+        Return: list of all values in the tree, in the order they were encountered by level from left to right
+        """
+        list_breadth=[]
+        breadth=Queue()
+        breadth.enqueue(tree.root)
+
+        while not breadth.is_empty():
+            node_front=breadth.dequeue()
+            list_breadth.append(node_front.value)
+            # print(node_front.value)
+            if node_front.left:
+                breadth.enqueue(node_front.left)
+            if node_front.right:
+                breadth.enqueue(node_front.right)
+        return list_breadth
 
 class Binary_Search_Tree(BinaryTree):
     
@@ -162,16 +182,17 @@ class Binary_Search_Tree(BinaryTree):
 
 
 if __name__=="__main__":
-    node1 = TNode(1)
-    node2 = TNode(2)
-    node3 = TNode(3)
-    node4 = TNode(4)
-    node1.left = node2
-    node1.right = node3
-    node3.right = node4
 
-    tree = Binary_Search_Tree()
-    tree.root = node1
+    # node1 = TNode(1)
+    # node2 = TNode(2)
+    # node3 = TNode(3)
+    # node4 = TNode(4)
+    # node1.left = node2
+    # node1.right = node3
+    # node3.right = node4
+
+    # tree = Binary_Search_Tree()
+    # tree.root = node1
 
     
     # tree.add(6)
@@ -179,5 +200,27 @@ if __name__=="__main__":
     # print(tree.post_order())
     # print("1\n2\n3\n4")
     # print(tree.root.left.value)
-    print(tree.max_value())
-      
+    # print(tree.max_value())
+
+    node1 = TNode(2)
+    node2 = TNode(7)
+    node3 = TNode(5)
+    node4 = TNode(2)
+    node5 = TNode(6)
+    node6 = TNode(5)
+    node7 = TNode(11)
+    node8 = TNode(9)
+    node9 = TNode(4)
+    node1.left = node2
+    node1.right = node3
+    node3.right = node8
+    node2.left=node4
+    node2.right=node5
+    node5.left=node6
+    node5.right=node7
+    node8.left=node9
+
+    tree135 = BinaryTree()
+    tree135.root=node1
+    print(tree135.breadth_first(tree135))
+    print(tree135.max_value())
