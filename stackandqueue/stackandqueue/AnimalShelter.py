@@ -1,5 +1,11 @@
 from stackandqueue.queue import Queue 
 
+class Dog:
+    pass
+
+class Cat:
+    pass
+
 class AnimalShelter :
     def __init__(self):
         self.cat_que = Queue()
