@@ -1,4 +1,4 @@
-from tree.tree import TNode, Binary_Search_Tree,BinaryTree
+from tree.tree_code import TNode, Binary_Search_Tree,BinaryTree
 from tree.new_stack import Node,Stack
 import pytest
 

@@ -15,6 +15,7 @@
 |Trees |<https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/Tree/README.md>|
 |Tree max method|<https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/Tree/Readtree_max.md>|
 |breadth-first-method|<https://github.com/ahmadjaara/data-structures-and-algorithms/blob/main/Tree/Readtree-breadth-first.md>|
+|Fizz-buzz_tree|<https://github.com/ahmadjaara/data-structures-and-algorithms/tree/main/Tree/k-Tree>|
 
 # data-structures-and-algorithms
 

@@ -1,6 +1,88 @@
+# from tree.queue123 import Queue ,Nodeq
+# from tree.new_stack import Stack,Node
 
-from tree.queue import Queue
-from tree.new_stack import Stack
+
+
+class Nodeq:
+    def __init__(self,value):
+        self.value=value
+        self.next=None
+
+class Queue:
+    def __init__(self) :
+        self.front=None
+        self.rear=None
+    
+    def enqueue (self,value):
+        node = Nodeq(value)
+
+        if not self.front :
+            self.rear = node 
+            self.front = node 
+        
+        else:  
+            self.rear.next = node 
+            self.rear = node 
+    def dequeue(self) :
+
+        if not self.front :
+            return "queue is empty"
+        
+        temp= self.front
+        self.front=self.front.next 
+        temp.next=None
+        
+        return temp.value
+
+    def is_empty(self):
+        return self.front == None 
+
+
+
+class Node:
+    def __init__(self,value):
+        self.value=value
+        self.next=None
+class Stack:
+
+    def __init__(self):
+        self.top=None
+
+    def push(self, value):
+        """
+            push will add a new Node to the stack
+
+            input: value
+            output: None
+
+        """
+        node = Node(value)
+        node.next = self.top
+        self.top = node
+
+    def pop(self):
+        """
+        input: none
+        doing: pop the top node from the stack 
+        output: popped node's value
+        """
+        if self.is_empty():
+            raise Exception("Stack is empty !")
+        
+        temp=self.top
+        self.top=self.top.next
+        temp.next=None
+        
+        return temp.value
+        
+        
+    def is_empty(self):
+        if self.top == None:
+            return True 
+        return False
+
+
+
 
 
 class TNode:
@@ -49,6 +131,28 @@ class BinaryTree:
 
         #     if current.left:
         #         stack.push(current.left)
+   
+    
+
+
+
+    def odd_sum(self):
+
+        odd_sum_var=[]
+        def _walk(node):
+
+            if node.value%2 !=0:
+                odd_sum_var.append(node.value)
+
+            if node.left:
+                _walk(node.left)
+            if node.right:
+                _walk(node.right)
+
+        _walk(self.root)
+
+        return sum(odd_sum_var)
+
     def in_order(self):
         """
         Input: None
@@ -179,7 +283,30 @@ class Binary_Search_Tree(BinaryTree):
             else:
                 ptr_node = ptr_node.right
     
+def file_compare_structure(tree1,tree2):
+    def file_num(var):
+        list_breadth=[]
+        breadth=Queue()
+        breadth.enqueue(var.root)
+        sum=0
 
+        while not breadth.is_empty():
+            node_front=breadth.dequeue()
+            list_breadth.append(node_front.value)
+            # print(node_front.value)
+            if node_front.left:
+                breadth.enqueue(node_front.left)
+            if node_front.right:
+                breadth.enqueue(node_front.right)
+            if node_front.left==None & node_front.right==None:
+                sum+=1
+
+        return sum
+
+    
+    tree1=file_num(tree1)
+    tree2=file_num(tree2)
+    return tree1==tree2
 
 if __name__=="__main__":
 
@@ -224,3 +351,51 @@ if __name__=="__main__":
     tree135.root=node1
     print(tree135.breadth_first(tree135))
     print(tree135.max_value())
+    print(tree135.odd_sum())
+
+
+
+
+    nodenew2 = TNode("Folder")
+    nodenew1 = TNode("Folder")
+    nodenew3 = TNode("file")
+    nodenew4 = TNode("file")
+    nodenew5 = TNode("file")
+    nodenew6 = TNode("Folder")
+    nodenew7 = TNode("file")
+    nodenew8 = TNode("Folder")
+    nodenew9 = TNode("file")
+    nodenew1.left = nodenew2
+    nodenew1.right = nodenew3
+    nodenew3.right = nodenew8
+    nodenew2.left=nodenew4
+    nodenew2.right=nodenew5
+    nodenew5.left=nodenew6
+    nodenew5.right=nodenew7
+    nodenew8.left=nodenew9
+
+    
+    nodenewsecond2 = TNode("file")
+    nodenewsecond1 = TNode("file")
+    nodenewsecond3 = TNode("file")
+    nodenewsecond4 = TNode("file")
+    nodenewsecond5 = TNode("file")
+    nodenewsecond6 = TNode("Folder")
+    nodenewsecond7 = TNode("file")
+    nodenewsecond8 = TNode("Folder")
+    nodenewsecond9 = TNode("file")
+    nodenewsecond1.left = nodenewsecond2
+    nodenewsecond1.right = nodenewsecond3
+    nodenewsecond3.right = nodenewsecond8
+    nodenewsecond2.left=nodenewsecond4
+    nodenewsecond2.right=nodenewsecond5
+    nodenewsecond5.left=nodenewsecond6
+    nodenewsecond5.right=nodenewsecond7
+    nodenewsecond8.left=nodenewsecond9
+
+    tree1 = BinaryTree()
+    tree2 = BinaryTree()
+    tree1.root=nodenew1
+    tree2.root=nodenew1
+
+    print(file_compare_structure(tree1,tree2))

@@ -75,7 +75,6 @@ Write the following methods for the Linked List class:
     argument: 2 linked lists
     Return New Linked List zipped the two list togather
 
-
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 - for **insert method** after the head i use a `o(1)` since here i just move one step and link the new node with head node and the space big O is `o(1)` since i add one node at the exist link list
@@ -91,7 +90,7 @@ the space is `O(1)` since i just add a new node for the same link list
 for space `O(1)` just add a variables .
 
 - for the **zip lists method** i use one loop to change between pointer variable so the big o notation for time is `O(n)`
-and the big o notation for space is `O(1)` since i just modifie the first link list and i dont create any new link list 
+and the big o notation for space is `O(1)` since i just modifie the first link list and i dont create any new link list
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
