@@ -18,6 +18,7 @@
 |Fizz-buzz_tree|<https://github.com/ahmadjaara/data-structures-and-algorithms/tree/main/Tree/k-Tree>|
 |insertion_sort |<https://github.com/ahmadjaara/data-structures-and-algorithms/tree/main/insertion_sort_v1>|
 |merge_sort|<https://github.com/ahmadjaara/data-structures-and-algorithms/tree/main/merge-sort>|
+|hashTable|<https://github.com/ahmadjaara/data-structures-and-algorithms/tree/main/hashTable>|
 
 # data-structures-and-algorithms
 
