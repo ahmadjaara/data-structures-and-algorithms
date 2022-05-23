@@ -32,12 +32,12 @@ def test_Collision_retrieve(hastable):
     hastable["good"]="1"
     hastable["bad"]="2"
     hastable["hot"]="3"
-    hastable["cold"]="4"
+    hastable["codl"]="4"
     hastable["cold"]="5"
     hastable["clod"]="6"
     #hastable.map[hastable.hash("cold")]==[["cold","4"],["cold","5"],["clod","6"]]
     assert hastable.map[hastable.hash("cold")][1]==["cold","5"]
-    assert  hastable["clod"]=="6"
+    assert  hastable["clod"]=="6",[["cold","4"],["codl","5"],["clod","6"]]
 
 @pytest.fixture
 def hastable():

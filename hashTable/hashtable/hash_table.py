@@ -40,7 +40,7 @@ class HashaTable(object):
                         return i[1]
             else:
                 if elment[0]==key:
-                    return elment[1]
+                    return elment[1],self.map[idx]
         return None 
         
     def contains(self,key):
@@ -123,14 +123,15 @@ class HashaTable(object):
         idx = self.get_hash(key)
         # get that index and look it up from the map
         # return the value stroed in that index
-        for elment in self.map[idx]:
+        for elment in self.map:
             if any(isinstance(x, list) for x in elment):
                 for i in elment:
                     if i[0]==key:
-                        return i[1]
+                        return i[1],self.map[idx]
             else:
-                if elment[0]==key:
-                    return elment[1]
+                if len(elment)!=0:
+                    if elment[0]==key:
+                        return elment[1]
         return None 
 
     def __setitem__(self, key, value):
@@ -169,4 +170,4 @@ if __name__ == "__main__":
     idx=hash_table2.hash("first_value")
     # print(hash_table2["first_value15"])
     # print(hash_table2.hash("hello"))
-    print( hashtable["could"])
+    print( hashtable["name"])
