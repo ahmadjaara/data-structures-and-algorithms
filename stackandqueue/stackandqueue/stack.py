@@ -33,6 +33,23 @@ class Stack :
     """
     return self.top == None 
      # return self.top
+  
+  def getMin(self):
+        """
+        :rtype: int
+        """
+        min=self.top.value
+        
+        while not self.is_empty():
+            temp=self.pop()
+            if min > temp:
+                  min=temp
+        return min 
 if __name__=="__main__":
   p = Stack()
-  print(p.top)
+  p.push(0)
+  p.push(1)
+  p.push(-1)
+
+  print(p.getMin())
+  # print(p.top.value)
