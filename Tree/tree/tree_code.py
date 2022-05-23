@@ -234,6 +234,25 @@ class BinaryTree:
             if node_front.right:
                 breadth.enqueue(node_front.right)
         return list_breadth
+    def breadth_first_max(self,tree):
+        """
+        Traverse the input tree using a Breadth-first approach 
+        Arguments: tree
+        Return: list of all values in the tree, in the order they were encountered by level from left to right
+        """
+        list_breadth=[]
+        breadth=Queue()
+        breadth.enqueue(tree.root)
+
+        while not breadth.is_empty():
+            node_front=breadth.dequeue()
+            list_breadth.append(node_front.value)
+            # print(node_front.value)
+            if node_front.left:
+                breadth.enqueue(node_front.left)
+            if node_front.right:
+                breadth.enqueue(node_front.right)
+        return max(list_breadth)
 
 class Binary_Search_Tree(BinaryTree):
     
@@ -298,7 +317,7 @@ def file_compare_structure(tree1,tree2):
                 breadth.enqueue(node_front.left)
             if node_front.right:
                 breadth.enqueue(node_front.right)
-            if node_front.left==None & node_front.right==None:
+            if node_front.left==None and node_front.right==None:
                 sum+=1
 
         return sum
@@ -350,8 +369,9 @@ if __name__=="__main__":
     tree135 = BinaryTree()
     tree135.root=node1
     print(tree135.breadth_first(tree135))
-    print(tree135.max_value())
-    print(tree135.odd_sum())
+    # print(tree135.max_value())
+    # print(tree135.odd_sum())
+    print(tree135.breadth_first_max(tree135))
 
 
 
@@ -398,4 +418,5 @@ if __name__=="__main__":
     tree1.root=nodenew1
     tree2.root=nodenew1
 
-    print(file_compare_structure(tree1,tree2))
+    # print(file_compare_structure(tree1,tree2))
+   

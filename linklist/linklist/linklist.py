@@ -1,6 +1,4 @@
-
-
-from email import header
+from platform import node
 
 
 class Node:
@@ -73,7 +71,7 @@ class Linklist:
             linklist_all=""
             temp = self.head
             while temp:
-                linklist_all+= temp.data+" -->"
+                linklist_all+= str(temp.data)+" -->"
                 temp = temp.next
             linklist_all+="None"
             return linklist_all
@@ -250,6 +248,27 @@ class Linklist:
             i+=1
             j-=1
         return True
+
+def merge_sorted_list(l1,l2):
+        curr=Linklist()
+
+        while l1.head and l2.head:
+            if l1.head.data < l2.head.data:
+                curr.next=Node(l1.head.data)
+                l1.head=l1.head.next
+            else:
+                curr.next=Node(l2.head)
+                l2.head=l2.head.next
+            curr=curr.next
+        if l1:
+            curr.next=l1.head
+        elif l2:
+            curr.next=l2.head
+        return curr.display()
+
+
+
+
         
 
 if __name__=="__main__":
@@ -281,26 +300,27 @@ if __name__=="__main__":
     ll=Linklist()
     ll2=Linklist()
 
-    ll.append_linklist("1")
-    # ll.append_linklist("2")
-    # ll.append_linklist("3")
-    # ll.append_linklist("4")
+    ll.append_linklist(1)
+    ll.append_linklist(2)
+    ll.append_linklist(3)
+    ll.append_linklist(4)
     # ll.insert_after("last","4")
     # ll.append_linklist("41")
     # ll.append_linklist("42")
     # ll.append_linklist("43")
 
-    ll.append_linklist("2")
-    ll.append_linklist("2")
-    ll.append_linklist("1")
-    # # ll2.append_linklist("8")
-    # # ll2.append_linklist("9")
-    # # ll2.append_linklist("10")
+    # ll.append_linklist("2")
+    # ll.append_linklist("2")
+    ll2.append_linklist(1)
+    ll2.append_linklist(8)
+    ll2.append_linklist(9)
+    ll2.append_linklist(10)
   
     # print(ll.display())
     # print(ll2.display())
     # ll.zipLists(ll,ll2)
     print(ll.display())
    
-    print(ll.panderrom())
+    # print(ll.panderrom())
     
+    print(merge_sorted_list(ll2,ll))
