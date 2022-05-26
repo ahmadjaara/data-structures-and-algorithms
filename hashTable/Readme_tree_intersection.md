@@ -23,17 +23,19 @@ if not i will continue
 
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
-- create a hash table 
+- create a hash table
 
 - traverse inside each tree by recursion function that has two input tree name and a string to use it as a key for the hastable
 
-- then each time it go inside the right side for the tree it will add "right" for the "root" string that it pass at the first time in the recursion function 
+- then each time it go inside the right side for the tree it will add "right" for the "root" string that it pass at the first time in the recursion function
 
 - and each time it go to left side of the tree node it will add "left" to the string and put it as a key for the hash table
 
-- first thing it apply the recursion function on each tree 
+- first thing it apply the recursion function on each tree
 
 - go to hash table each hash index contain more than one element i will compare if they have the same value or not if yes we will add it to a a common list
 if not i will continue
 
-- return the common list 
+- return the common list
+
+<https://github.com/ahmadjaara/data-structures-and-algorithms/tree/main/hashTable>
