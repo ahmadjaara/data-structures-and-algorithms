@@ -2,32 +2,37 @@ from hashtable.hash_table import *
 from .tree_use import *
 
 def intersection_tree(input1,input2):
-        list_inter=HashaTable()
-        if input1.root==None or input2.root==None:
-            return []
-        def _walk(node,l):
+    """
+    take two binary tree as input and return the intersection between these two tree in a list
+    input : two tree 
+    output :list of common node between the trees 
+    """
+    list_inter=HashaTable()
+    if input1.root==None or input2.root==None:
+        return []
+    def _walk(node,l):
 
-            if node.left:
+        if node.left:
 
-                _walk(node.left,l+"left")
+            _walk(node.left,l+"left")
 
-            if node.right:
-                _walk(node.right,l+"right")
-            list_inter.set(l,str(node.value))
+        if node.right:
+            _walk(node.right,l+"right")
+        list_inter.set(l,str(node.value))
 
-        _walk(input1.root,"root")
-        _walk(input2.root,"root")
-        list_common=[]
-        for i in list_inter.keys():
-            if len(list_inter[i][1])==2:
-                    if list_inter[i][1][0][1]==list_inter[i][1][1][1]:
-                        list_common.append(list_inter[i][1][1][1])
-            elif len(list_inter[i][1]) > 2:
-                        dup = [x for j, x in enumerate(list_inter[i][1]) if x in list_inter[i][1][:j]]
-        for i in dup:
-            list_common.append(i[1])
+    _walk(input1.root,"root")
+    _walk(input2.root,"root")
+    list_common=[]
+    for i in list_inter.keys():
+        if len(list_inter[i][1])==2:
+                if list_inter[i][1][0][1]==list_inter[i][1][1][1]:
+                    list_common.append(list_inter[i][1][1][1])
+        elif len(list_inter[i][1]) > 2:
+                    dup = [x for j, x in enumerate(list_inter[i][1]) if x in list_inter[i][1][:j]]
+    for i in dup:
+        list_common.append(i[1])
 
-        return list_common
+    return list_common
 
 if __name__ =="__main__":
 
