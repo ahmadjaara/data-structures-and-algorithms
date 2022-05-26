@@ -170,4 +170,7 @@ if __name__ == "__main__":
     idx=hash_table2.hash("first_value")
     # print(hash_table2["first_value15"])
     # print(hash_table2.hash("hello"))
-    print( hashtable["name"])
+    print( hashtable.set("ahmad","best2"))
+    print(hashtable["name"][1][0][1])
+    print(hashtable["ahmad"])
+    # print(hashtable.map)
