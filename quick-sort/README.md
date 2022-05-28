@@ -140,3 +140,5 @@ since it used a recursion function that used stack to save the operation inside 
 ## white boared
 
 ![white board](pic/quick%20sort%20.jpg "white board")
+
+<https://github.com/ahmadjaara/data-structures-and-algorithms/tree/main/quick-sort>

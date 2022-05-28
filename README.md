@@ -21,6 +21,7 @@
 |hashTable|<https://github.com/ahmadjaara/data-structures-and-algorithms/tree/main/hashTable>|
 |repeated_function|<https://github.com/ahmadjaara/data-structures-and-algorithms/tree/main/hashTable>|
 |intersection_function|<https://github.com/ahmadjaara/data-structures-and-algorithms/tree/main/hashTable>|
+|quick_sort algorithm|<https://github.com/ahmadjaara/data-structures-and-algorithms/tree/main/quick-sort>|
 
 # data-structures-and-algorithms
 
