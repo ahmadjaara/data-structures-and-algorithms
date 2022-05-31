@@ -8,7 +8,7 @@ Write a function that LEFT JOINs two hashmaps into a single data structure.
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![joinlist](assets/hashmap_left_right.jpg "joinlist")
+![joinlist](assets/hashmap_left_righ.jpg "joinlist")
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
