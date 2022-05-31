@@ -26,5 +26,7 @@ In simple sentence my solution run as below :
 - each time it will append the key then append the value of it to templist
 - then make an if condition inside the loop if the get for the key for the second hash map have a none value it will append it to the templist
 - if not it will append none to templist
-- then it will append the templist to the list that i define outside the loop 
+- then it will append the templist to the list that i define outside the loop
 - after finishing the for loop it will  return the output list
+
+link: <https://github.com/ahmadjaara/data-structures-and-algorithms/tree/main/hashTable/leftjoin>
