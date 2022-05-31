@@ -33,14 +33,15 @@ class HashaTable(object):
         idx = self.get_hash(key)
         # get that index and look it up from the map
         # return the value stroed in that index
-        for elment in self.map[idx]:
-            if any(isinstance(x, list) for x in elment):
+        for elment in self.map:
+            # if any(isinstance(x, list) for x in elment):
+            if len(elment)>1:
                 for i in elment:
                     if i[0]==key:
-                        return i[1]
-            else:
+                        return self.map[idx]
+            elif len(elment)==1:
                 if elment[0]==key:
-                    return elment[1],self.map[idx]
+                    return elment[1]
         return None 
         
     def contains(self,key):
@@ -123,16 +124,31 @@ class HashaTable(object):
         idx = self.get_hash(key)
         # get that index and look it up from the map
         # return the value stroed in that index
-        for elment in self.map:
-            if any(isinstance(x, list) for x in elment):
-                for i in elment:
-                    if i[0]==key:
-                        return i[1],self.map[idx]
-            else:
-                if len(elment)!=0:
-                    if elment[0]==key:
-                        return elment[1]
-        return None 
+        # for elment in self.map:
+        #     if any(isinstance(x, list) for x in elment):
+        #         for i in elment:
+        #             if i[0]==key:
+        #                 return i[1]
+        #     else:
+        #         if len(elment)!=0:
+        #             if elment[0]==key:
+        #                 return elment[1]
+        # return None
+        if len(self.map[idx])>1:
+            for elment in self.map[idx]:
+                # if any(isinstance(x, list) for x in elment):    
+                if elment[0]==key:
+                    # return self.map[idx]
+                    return elment[1]
+        elif len(self.map[idx])==1:
+            if self.map[idx][0][0]==key:
+                return self.map[idx][0][1]
+        return None  
+        # arr_index = self.get_hash(key)
+        # for index, kv in enumerate(self.map[arr_index]):
+        #     if kv[0] == key:
+        #         print("del",index)
+        #         del self.map[arr_index][index]
 
     def __setitem__(self, key, value):
         """
@@ -150,6 +166,7 @@ class HashaTable(object):
         else:
             self.map[idx].append([key, value])
 if __name__ == "__main__":
+
     hashtable = HashaTable()
     hashtable.add("cloud", "AWS")
     hashtable.add("cloud", "Azure")
@@ -171,6 +188,23 @@ if __name__ == "__main__":
     # print(hash_table2["first_value15"])
     # print(hash_table2.hash("hello"))
     print( hashtable.set("ahmad","best2"))
-    print(hashtable["name"][1][0][1])
+    print(hashtable["could"])
     print(hashtable["ahmad"])
-    # print(hashtable.map)
+    print(hashtable.get("could"))
+    print(hashtable.keys())
+    hashtable.add("kjlaksjdh", "AWS")
+    print(hashtable["kjlaksjdh"])
+    hashtablel = HashaTable()
+    # hashtable1["diligent"]="employed"
+    # hashtable1["fond"]="enamored"
+    # hashtable1["guide"]="usher"
+    # hashtable1["outfit"]="garb"
+    # hashtable1["wrath"]="anger"
+    # print(hashtable1.get("fond"))
+    # print(hashtable["ahmad1235"])
+
+    # hashtable1.set("diligent", "employed")
+
+    print(hashtable["diligent"])
+    hashtablel["asca"]="asc"
+    print(hashtablel["asca"])
